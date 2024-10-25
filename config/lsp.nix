@@ -1,5 +1,10 @@
 {
+  lib,
+  config,
+  ...
+}: {
   plugins = {
+    lsp-format.enable = lib.mkIf (!config.plugins.conform-nvim.enable) true;
     treesitter = {
       enable = true;
 

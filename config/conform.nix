@@ -2,7 +2,9 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+# Shamelessly taken from https://github.com/khaneliman/khanelivim/blob/0b8fa8aa00cf07e693d264bf1183e6a71acb9793/packages/khanelivim/plugins/conform.nix#L39
+{
   extraConfigLuaPre = ''
     local slow_format_filetypes = {}
 
@@ -36,9 +38,11 @@
       bang = true,
     })
   '';
+
   plugins = {
     conform-nvim = {
       enable = true;
+
       settings = {
         format_on_save =
           # Lua
@@ -78,13 +82,92 @@
             end
           '';
 
-        formatters_by_fit = {
-          nix = ["alejandra"];
+        # NOTE:
+        # Conform will run multiple formatters sequentially
+        # [ "1" "2" "3"]
+        # Add stop_after_first to run only the first available formatter
+        # { "__unkeyed-1" = "foo"; "__unkeyed-2" = "bar"; stop_after_first = true; }
+        # Use the "*" filetype to run formatters on all filetypes.
+        # Use the "_" filetype to run formatters on filetypes that don't
+        # have other formatters configured.
+        formatters_by_ft = {
+          bash = [
+            "shellcheck"
+            "shellharden"
+            "shfmt"
+          ];
+          c = ["clang_format"];
+          cmake = ["cmake-format"];
+          cpp = ["clang_format"];
+          css = ["stylelint"];
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
+          json = ["jq"];
+          nix = ["nixfmt"];
+          python = [
+            "isort"
+            "ruff"
+          ];
+          sh = [
+            "shellcheck"
+            "shellharden"
+            "shfmt"
+          ];
+          toml = ["taplo"];
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
+          yaml = ["yamlfmt"];
+          "_" = [
+            "squeeze_blanks"
+            "trim_whitespace"
+            "trim_newlines"
+          ];
         };
 
         formatters = {
-          alejandra = {
-            command = lib.getExe pkgs.alejandra;
+          black = {
+            command = lib.getExe pkgs.black;
+          };
+          cmake-format = {
+            command = lib.getExe pkgs.cmake-format;
+          };
+          isort = {
+            command = lib.getExe pkgs.isort;
+          };
+          jq = {
+            command = lib.getExe pkgs.jq;
+          };
+          nixfmt = {
+            command = lib.getExe pkgs.nixfmt-rfc-style;
+          };
+          prettierd = {
+            command = lib.getExe pkgs.prettierd;
+          };
+          shellcheck = {
+            command = lib.getExe pkgs.shellcheck;
+          };
+          shfmt = {
+            command = lib.getExe pkgs.shfmt;
+          };
+          shellharden = {
+            command = lib.getExe pkgs.shellharden;
+          };
+          squeeze_blanks = {
+            command = lib.getExe' pkgs.coreutils "cat";
+          };
+          stylelint = {
+            command = lib.getExe pkgs.stylelint;
+          };
+          yamlfmt = {
+            command = lib.getExe pkgs.yamlfmt;
           };
         };
       };
