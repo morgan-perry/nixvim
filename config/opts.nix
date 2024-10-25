@@ -1,9 +1,19 @@
-{
+{pkgs, ...}: {
   colorschemes.vscode.enable = true;
   globals.mapleader = " ";
 
-  clipboard.register = "unnamedplus";
-  #clipboard.providers.wl-copy.enable = true; for wayland
+  clipboard = {
+    # Use system clipboard
+    register = "unnamedplus";
+
+    providers = {
+      wl-copy = {
+        enable = true;
+        package = pkgs.wl-clipboard; # NOTE: May not work on WSL
+      };
+    };
+  };
+
   performance.byteCompileLua = {
     enable = true;
     configs = true;
