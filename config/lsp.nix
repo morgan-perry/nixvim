@@ -69,7 +69,6 @@
           nil-ls.autostart = true;
           pyright.enable = true;
           clangd.enable = true;
-          cssls.enable = true;
           html.enable = true;
           tailwindcss.enable = true;
         };
