@@ -28,5 +28,9 @@
         action = ":w<CR>";
         key = "<C-x><C-s>";
     }
+    {
+      action = "<CMD>lua vim.lsp.buf.format()<CR>";
+      key = "<C-x><C-f>";
+    }
   ];
 }

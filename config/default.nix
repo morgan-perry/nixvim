@@ -1,6 +1,6 @@
 {
   # Import all your configuration modules here
-  imports = [ ./lsp.nix ./bufferline.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix];
+  imports = [ ./lsp.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix ./ufo.nix];
   plugins = {
     flash.enable = true;
     nix.enable = true;

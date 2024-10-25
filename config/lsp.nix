@@ -9,7 +9,6 @@
         highlight.enable = true;
         indent.enable = true;
       };
-      # folding = true; not sure because of nvim-ufo
     };
     lspkind = {
       enable = true;
@@ -52,70 +51,75 @@
           { name = "nvim_lsp_signature_help"; }
           { name = "luasnip"; }
           {
-          name = "buffer";
-              # Words from other open buffers can also be suggested.
-              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-            }
-            { name = "neorg"; }
-          ];
-        };
-      };
-
-      lsp = {
-        enable = true;
-        servers = {
-          #tsserver.enable = true;
-          nil-ls.enable = true;
-          nil-ls.autostart = true;
-          pyright.enable = true;
-          clangd.enable = true;
-          html.enable = true;
-          tailwindcss.enable = true;
-        };
-        keymaps.extra = [
-          {
-            action = "<CMD>LspStop<Enter>";
-            key = "<leader>Lx";
+            name = "buffer";
+            # Words from other open buffers can also be suggested.
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
-          {
-            action = "<CMD>LspStart<Enter>";
-            key = "<leader>Ls";
-          }
-          {
-            action = "<CMD>LspRestart<Enter>";
-            key = "<leader>Lr";
-          }
-          {
-            # action = "Telescope lsp_definitions";
-            action = "<CMD>Lspsaga goto_definition<Enter>";
-            key = "gd";
-          }
-          {
-            action = "<CMD>Lspsaga hover_doc<Enter>";
-            key = "K";
-          }
-          {
-            action = "<CMD>Lspsaga peek_definition<Enter>";
-            key = "<leader>K";
-          }
-          {
-            action = "<CMD>Lspsaga rename<Enter>";
-            key = "<leader>cr";
-          }
-          {
-            action = "<CMD>Lspsaga finder<Enter>";
-            key = "<leader>cf";
-          }
-          {
-            action = "<CMD>Lspsaga outline<Enter>";
-            key = "<leader>co";
-          }
-          {
-            action = "<CMD>Lspsaga outline<Enter>";
-            key = "<leader>cf";
-          }
+          { name = "neorg"; }
         ];
       };
-
     };
+
+    lsp = {
+      enable = true;
+      servers = {
+        nixd = {
+          enable = true;
+          filetypes = [ "nix" ];
+          autostart = true;
+          settings = {
+            nixpkgs.expr = "import <nixpkgs> { }";
+          };
+        };
+        pyright.enable = true;
+        clangd.enable = true;
+        html.enable = true;
+        tailwindcss.enable = true;
+      };
+      keymaps.extra = [
+        {
+          action = "<CMD>LspStop<Enter>";
+          key = "<leader>Lx";
+        }
+        {
+          action = "<CMD>LspStart<Enter>";
+          key = "<leader>Ls";
+        }
+        {
+          action = "<CMD>LspRestart<Enter>";
+          key = "<leader>Lr";
+        }
+        {
+          # action = "Telescope lsp_definitions";
+          action = "<CMD>Lspsaga goto_definition<Enter>";
+          key = "gd";
+        }
+        {
+          action = "<CMD>Lspsaga hover_doc<Enter>";
+          key = "K";
+        }
+        {
+          action = "<CMD>Lspsaga peek_definition<Enter>";
+          key = "<leader>K";
+        }
+        {
+          action = "<CMD>Lspsaga rename<Enter>";
+          key = "<leader>cr";
+        }
+        {
+          action = "<CMD>Lspsaga finder<Enter>";
+          key = "<leader>cf";
+        }
+        {
+          action = "<CMD>Lspsaga outline<Enter>";
+          key = "<leader>co";
+        }
+        {
+          action = "<CMD>Lspsaga outline<Enter>";
+          key = "<leader>cf";
+        }
+      ];
+    };
+
+  };
 }
