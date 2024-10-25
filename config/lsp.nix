@@ -46,16 +46,16 @@
         };
 
         sources = [
-          { name = "path"; }
-          { name = "nvim_lsp"; }
-          { name = "nvim_lsp_signature_help"; }
-          { name = "luasnip"; }
+          {name = "path";}
+          {name = "nvim_lsp";}
+          {name = "nvim_lsp_signature_help";}
+          {name = "luasnip";}
           {
             name = "buffer";
             # Words from other open buffers can also be suggested.
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
-          { name = "neorg"; }
+          {name = "neorg";}
         ];
       };
     };
@@ -65,10 +65,11 @@
       servers = {
         nixd = {
           enable = true;
-          filetypes = [ "nix" ];
+          filetypes = ["nix"];
           autostart = true;
           settings = {
             nixpkgs.expr = "import <nixpkgs> { }";
+            #formatting.command = ["nixfmt"];
           };
         };
         pyright.enable = true;
@@ -120,6 +121,5 @@
         }
       ];
     };
-
   };
 }

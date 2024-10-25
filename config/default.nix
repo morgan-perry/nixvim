@@ -1,6 +1,6 @@
-{
+{pkgs, ...}: {
   # Import all your configuration modules here
-  imports = [ ./lsp.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix ./ufo.nix];
+  imports = [./lsp.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix ./ufo.nix ./conform.nix];
   plugins = {
     flash.enable = true;
     nix.enable = true;
@@ -10,4 +10,5 @@
     undotree.enable = true;
     lspsaga.enable = true;
   };
+  extraPackages = [pkgs.alejandra];
 }
