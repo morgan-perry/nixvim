@@ -25,7 +25,7 @@
   opts = {
     number = true;
     relativenumber = true;
-    signcolumn = "number";
+    signcolumn = "yes";
     expandtab = true;
     autoindent = true;
     smartindent = true;
