@@ -5,6 +5,12 @@
 }: {
   plugins = {
     lsp-format.enable = lib.mkIf (!config.plugins.conform-nvim.enable) true;
+
+    lspsaga = {
+      enable = true;
+      lightbulb.enable = false;
+    };
+
     treesitter = {
       enable = true;
 

@@ -8,6 +8,5 @@
     neogit.enable = true;
     which-key.enable = true;
     undotree.enable = true;
-    lspsaga.enable = true;
   };
 }
