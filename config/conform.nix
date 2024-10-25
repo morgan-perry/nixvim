@@ -107,7 +107,7 @@
             stop_after_first = true;
           };
           json = ["jq"];
-          nix = ["nixfmt"];
+          nix = ["alejandra"];
           python = [
             "isort"
             "ruff"
@@ -145,8 +145,8 @@
           jq = {
             command = lib.getExe pkgs.jq;
           };
-          nixfmt = {
-            command = lib.getExe pkgs.nixfmt-rfc-style;
+          alejandra = {
+            command = lib.getExe pkgs.alejandra;
           };
           prettierd = {
             command = lib.getExe pkgs.prettierd;

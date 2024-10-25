@@ -10,5 +10,4 @@
     undotree.enable = true;
     lspsaga.enable = true;
   };
-  extraPackages = [pkgs.alejandra];
 }
