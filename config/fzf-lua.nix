@@ -4,6 +4,7 @@
       enable = true;
       keymaps = {
         "<leader>/" = "live_grep";
+        "<C-s>" = "grep_curbuf";
         "<leader>pf" = "git_files";
         "<leader>f" = "files";
         "<leader>ps" = "lsp_workspace_symbols";
