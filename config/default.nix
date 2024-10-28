@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Import all your configuration modules here
-  imports = [./lsp.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix ./ufo.nix ./conform.nix ./git.nix ./yazi.nix];
+  imports = [./lsp.nix ./fzf-lua.nix ./opts.nix ./keymaps.nix ./mini.nix ./harpoon.nix ./ufo.nix ./conform.nix ./git.nix ./yazi.nix ./toggleterm.nix];
   plugins = {
     flash.enable = true;
     nix.enable = true;
