@@ -86,7 +86,7 @@
         pyright.enable = true;
         clangd.enable = true;
         html.enable = true;
-        ts-ls.enable = true;
+        ts_ls.enable = true;
         tailwindcss.enable = true;
       };
       keymaps.extra = [
