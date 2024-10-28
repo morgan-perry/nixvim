@@ -1,4 +1,8 @@
 {
+  lib,
+  config,
+  ...
+}: {
   plugins = {
     web-devicons.enable = true;
     mini = {
@@ -50,4 +54,12 @@
       };
     };
   };
+
+  keymaps = lib.mkIf config.plugins.mini.enable [
+    {
+      action = "<cmd>lua MiniFiles.open()<CR>";
+      key = "<leader>o";
+      mode = "n";
+    }
+  ];
 }

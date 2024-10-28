@@ -1,4 +1,8 @@
 {
+  lib,
+  config,
+  ...
+}: {
   plugins = {
     neogit.enable = true;
     gitsigns = {
@@ -20,4 +24,12 @@
       };
     };
   };
+
+  keymaps = lib.mkIf config.plugins.neogit.enable [
+    {
+      action = "<cmd>Neogit<CR>";
+      key = "<leader>gg";
+      mode = "n";
+    }
+  ];
 }

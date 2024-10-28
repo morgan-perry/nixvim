@@ -1,8 +1,6 @@
 {
-  plugins = {
-    nvim-ufo = {
-      enable = true;
-      providerSelector = "treesitter";
-    };
+  plugins.nvim-ufo = {
+    enable = true;
+    providerSelector = "treesitter";
   };
 }
