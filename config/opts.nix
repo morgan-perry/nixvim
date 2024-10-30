@@ -14,6 +14,12 @@
     };
   };
 
+  performance.combinePlugins = {
+    enable = true;
+    standalonePlugins = [
+      "nvim-treesitter"
+    ];
+  };
   performance.byteCompileLua = {
     enable = true;
     configs = true;

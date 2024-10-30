@@ -14,7 +14,9 @@
     treesitter = {
       enable = true;
 
-      nixvimInjections = true;
+      # Breaks with combine plugins, this is experimental so may change in future
+      # Even with hmts.nvim it breaks
+      nixvimInjections = false;
 
       settings = {
         highlight.enable = true;
