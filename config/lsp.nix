@@ -40,36 +40,39 @@
         ellipsis_char = "...";
       };
     };
-    cmp = {
+
+    blink-cmp = {
       enable = true;
-
       settings = {
-        snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
-
-        mapping = {
-          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.close()";
-          "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+        accept = {
+          auto_brackets = {
+            enabled = false;
+          };
         };
-
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "nvim_lsp_signature_help";}
-          {name = "luasnip";}
-          {
-            name = "buffer";
-            # Words from other open buffers can also be suggested.
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          }
-          {name = "neorg";}
-        ];
+        documentation = {
+          auto_show = false;
+        };
+        highlight = {
+          use_nvim_cmp_as_default = true;
+        };
+        keymap = {
+          accept = "<Tab>";
+          hide = "<C-e>";
+          hide_documentation = "<C-space>";
+          scroll_documentation_down = "<C-f>";
+          scroll_documentation_up = "<C-b>";
+          select_next = "<C-n>";
+          select_prev = "<C-p>";
+          show = "<C-space>";
+          show_documentation = "<C-space>";
+          snippet_backward = "<S-Tab>";
+          snippet_forward = "<Tab>";
+        };
+        trigger = {
+          signature_help = {
+            enabled = true;
+          };
+        };
       };
     };
 
