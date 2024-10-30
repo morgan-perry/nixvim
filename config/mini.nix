@@ -4,9 +4,9 @@
   ...
 }: {
   plugins = {
-    web-devicons.enable = true;
     mini = {
       enable = true;
+      mockDevIcons = true; # Fixes web-devicons.enable warning
       modules = {
         pairs = {};
         surround = {};
@@ -16,6 +16,7 @@
         files = {};
         hipatterns = {};
         statusline = {};
+        icons = {};
         starter = {
           content_hooks = {
             "__unkeyed-1.adding_bullet" = {
