@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -79,15 +80,23 @@
     lsp = {
       enable = true;
       servers = {
+        # TODO: Investigate why this won't use home-manager options
         nixd = {
           enable = true;
-          filetypes = ["nix"];
-          autostart = true;
           settings = {
-            nixpkgs.expr = "import <nixpkgs> { }";
-            #formatting.command = ["nixfmt"];
+            # A backup for conform
+            formatting.command = [(lib.getExe pkgs.alejandra)];
+            options = let
+              # NOTE: Customize with your nixos flake path
+              getFlake = ''(builtins.getFlake "/home/moogly/.dot/flake.nix")'';
+            in {
+              nixos.expr = ''${getFlake}.nixosConfigurations.lit.options'';
+              nixvim.expr = ''${getFlake}.packages.${pkgs.system}.nvim.options'';
+              home-manager.expr = ''${getFlake}.homeConfigurations.lit.options'';
+            };
           };
         };
+        zls.enable = true;
         pyright.enable = true;
         clangd.enable = true;
         html.enable = true;
