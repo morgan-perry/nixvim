@@ -18,8 +18,12 @@
   plugins = {
     flash.enable = true;
     nix.enable = true;
+    undotree.enable = true;
     friendly-snippets.enable = true;
     which-key.enable = true;
-    undotree.enable = true;
+    zig = {
+      enable = true;
+      settings.fmt_autosave = 1; # Does this work with nvim-conform?
+    };
   };
 }
