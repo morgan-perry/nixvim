@@ -1,5 +1,5 @@
 {
-  competitest = {
+  plugins.competitest = {
     enable = true;
     settings = {
       compile_command = {
