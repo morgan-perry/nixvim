@@ -17,6 +17,7 @@
         hipatterns = {};
         statusline = {};
         icons = {};
+        sessions = {};
         starter = {
           content_hooks = {
             "__unkeyed-1.adding_bullet" = {
@@ -46,6 +47,9 @@
             };
             "__unkeyed-3.recent_files" = {
               __raw = "require('mini.starter').sections.recent_files(10, true)";
+            };
+            "__unkeyed-4.sessions" = {
+              __raw = "require('mini.starter').sections.sessions(5, true)";
             };
           };
         };
