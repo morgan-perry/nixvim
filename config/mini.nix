@@ -17,7 +17,10 @@
         hipatterns = {};
         statusline = {};
         icons = {};
-        sessions = {};
+        sessions = {
+          autoread = true;
+          autowrite = true;
+        };
         starter = {
           content_hooks = {
             "__unkeyed-1.adding_bullet" = {
