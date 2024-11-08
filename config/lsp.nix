@@ -50,24 +50,41 @@
             enabled = false;
           };
         };
-        documentation = {
+        windows.documentation = {
           auto_show = false;
         };
         highlight = {
           use_nvim_cmp_as_default = true;
         };
         keymap = {
-          accept = "<Tab>";
-          hide = "<C-e>";
-          hide_documentation = "<C-space>";
-          scroll_documentation_down = "<C-f>";
-          scroll_documentation_up = "<C-b>";
-          select_next = "<C-n>";
-          select_prev = "<C-p>";
-          show = "<C-space>";
-          show_documentation = "<C-space>";
-          snippet_backward = "<S-Tab>";
-          snippet_forward = "<Tab>";
+          "<C-e>" = [
+            "hide"
+          ];
+          "<C-n>" = [
+            "select_next"
+            "fallback"
+          ];
+          "<C-p>" = [
+            "select_prev"
+            "fallback"
+          ];
+          "<C-space>" = [
+            "show"
+            "show_documentation"
+            "hide_documentation"
+          ];
+          "<C-y>" = [
+            "select_and_accept"
+          ];
+          "<S-Tab>" = [
+            "snippet_backward"
+            "fallback"
+          ];
+          "<Tab>" = [
+            "select_and_accept"
+            "snippet_forward"
+            "fallback"
+          ];
         };
         trigger = {
           signature_help = {
