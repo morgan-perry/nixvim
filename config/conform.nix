@@ -124,6 +124,7 @@
           stop_after_first = true;
         };
         yaml = ["yamlfmt"];
+        zig = lib.optionals pkgs.stdenv.hostPlatform.isLinux ["zigfmt"];
         "_" = [
           "squeeze_blanks"
           "trim_whitespace"
@@ -167,6 +168,10 @@
         };
         yamlfmt = {
           command = lib.getExe pkgs.yamlfmt;
+        };
+        # FIXME: broken nixpkgs
+        zigfmt = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+          command = lib.getExe pkgs.zig;
         };
       };
     };

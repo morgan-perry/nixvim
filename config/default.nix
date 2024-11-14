@@ -23,7 +23,7 @@
     which-key.enable = true;
     zig = {
       enable = true;
-      settings.fmt_autosave = 1; # Does this work with nvim-conform?
+      settings.fmt_autosave = 0; # Does this work with nvim-conform? nope
     };
   };
 }
