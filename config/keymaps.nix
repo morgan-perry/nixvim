@@ -8,6 +8,7 @@
       action = ":b#<CR>";
       key = "<leader>`";
       mode = "n";
+      options.silent = true;
     }
     {
       action = "<C-W>";

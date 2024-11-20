@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   # NOTE: No todoFzfLua in nixvim atm
   keymaps = lib.mkIf config.plugins.todo-comments.enable [
     {

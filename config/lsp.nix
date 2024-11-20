@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   plugins = {
     lsp-format.enable = lib.mkIf (!config.plugins.conform-nvim.enable) true;
 
@@ -33,7 +34,7 @@
           nvim_lua = "[api]";
           path = "[path]";
           luasnip = "[snip]";
-          buffer = "[buffer]";
+          # buffer = "[buffer]";
         };
       };
       extraOptions = {
@@ -57,9 +58,7 @@
           use_nvim_cmp_as_default = true;
         };
         keymap = {
-          "<C-e>" = [
-            "hide"
-          ];
+          "<C-e>" = [ "hide" ];
           "<C-n>" = [
             "select_next"
             "fallback"
@@ -73,9 +72,7 @@
             "show_documentation"
             "hide_documentation"
           ];
-          "<C-y>" = [
-            "select_and_accept"
-          ];
+          "<C-y>" = [ "select_and_accept" ];
           "<S-Tab>" = [
             "snippet_backward"
             "fallback"
@@ -91,6 +88,17 @@
             enabled = true;
           };
         };
+        sources = {
+          completion = {
+            enabled_providers = [
+              "lsp"
+              "path"
+              "snippets"
+              # enable to have text completion
+              # "buffer"
+            ];
+          };
+        };
       };
     };
 
@@ -100,18 +108,22 @@
         # TODO: Investigate why this won't use home-manager options
         nixd = {
           enable = true;
-          settings = {
-            # A backup for conform
-            formatting.command = [(lib.getExe pkgs.alejandra)];
-            options = let
+          settings =
+            let
               # NOTE: Customize with your nixos flake path
-              getFlake = ''(builtins.getFlake "/home/moogly/.dot/flake.nix")'';
-            in {
-              nixos.expr = ''${getFlake}.nixosConfigurations.lit.options'';
-              nixvim.expr = ''${getFlake}.packages.${pkgs.system}.nvim.options'';
-              home-manager.expr = ''${getFlake}.homeConfigurations.lit.options'';
+              flake = ''(builtins.getFlake \"/home/moogly/.dot/flake.nix\")'';
+              system = "\${builtins.currentSystem}";
+            in
+            {
+              # A backup for conform
+              formatting.command = [ (lib.getExe pkgs.nixfmt-rfc-style) ];
+              nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
+              options = {
+                nixos.expr = "${flake}.nixosConfigurations.lit.options";
+                nixvim.expr = "${flake}.packages.${pkgs.system}.nvim.options";
+                home-manager.expr = "${flake}.homeConfigurations.lit.options";
+              };
             };
-          };
         };
         zls.enable = true;
         pyright.enable = true;
@@ -119,6 +131,8 @@
         html.enable = true;
         ts_ls.enable = true;
         tailwindcss.enable = true;
+        racket_langserver.enable = true;
+        racket_langserver.package = null;
       };
       keymaps.extra = [
         {

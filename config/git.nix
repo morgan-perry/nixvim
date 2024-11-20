@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   plugins = {
     neogit.enable = true;
     gitsigns = {

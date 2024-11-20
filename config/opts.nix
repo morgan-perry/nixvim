@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   colorschemes.vscode.enable = true;
   globals.mapleader = " ";
 

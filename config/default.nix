@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Append all your configuration modules here
   imports = [
     ./opts.nix
@@ -21,6 +22,7 @@
     undotree.enable = true;
     friendly-snippets.enable = true;
     which-key.enable = true;
+    trouble.enable = true;
     zig = {
       enable = true;
       settings.fmt_autosave = 0; # Does this work with nvim-conform? nope

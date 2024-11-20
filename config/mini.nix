@@ -2,21 +2,22 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   plugins = {
     mini = {
       enable = true;
       mockDevIcons = true; # Fixes web-devicons.enable warning
       modules = {
-        pairs = {};
-        surround = {};
-        ai = {};
-        move = {};
-        comment = {};
-        files = {};
-        hipatterns = {};
-        statusline = {};
-        icons = {};
+        pairs = { };
+        surround = { };
+        ai = { };
+        move = { };
+        comment = { };
+        files = { };
+        hipatterns = { };
+        statusline = { };
+        icons = { };
         sessions = {
           autoread = true;
           autowrite = true;

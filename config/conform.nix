@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 # Shamelessly taken from https://github.com/khaneliman/khanelivim/blob/0b8fa8aa00cf07e693d264bf1183e6a71acb9793/packages/khanelivim/plugins/conform.nix#L39
 {
   extraConfigLuaPre = ''
@@ -95,18 +91,18 @@
           "shellharden"
           "shfmt"
         ];
-        c = ["clang_format"];
-        cmake = ["cmake-format"];
-        cpp = ["clang_format"];
-        css = ["stylelint"];
+        c = [ "clang_format" ];
+        cmake = [ "cmake-format" ];
+        cpp = [ "clang_format" ];
+        css = [ "stylelint" ];
         javascript = {
           __unkeyed-1 = "prettierd";
           __unkeyed-2 = "prettier";
           timeout_ms = 2000;
           stop_after_first = true;
         };
-        json = ["jq"];
-        nix = ["alejandra"];
+        json = [ "jq" ];
+        nix = [ "nix fmt" ];
         python = [
           "isort"
           "ruff"
@@ -116,15 +112,15 @@
           "shellharden"
           "shfmt"
         ];
-        toml = ["taplo"];
+        toml = [ "taplo" ];
         typescript = {
           __unkeyed-1 = "prettierd";
           __unkeyed-2 = "prettier";
           timeout_ms = 2000;
           stop_after_first = true;
         };
-        yaml = ["yamlfmt"];
-        zig = lib.optionals pkgs.stdenv.hostPlatform.isLinux ["zigfmt"];
+        yaml = [ "yamlfmt" ];
+        zig = lib.optionals pkgs.stdenv.hostPlatform.isLinux [ "zigfmt" ];
         "_" = [
           "squeeze_blanks"
           "trim_whitespace"
@@ -145,8 +141,8 @@
         jq = {
           command = lib.getExe pkgs.jq;
         };
-        alejandra = {
-          command = lib.getExe pkgs.alejandra;
+        "nix fmt" = {
+          command = lib.getExe pkgs.nixfmt-rfc-style;
         };
         prettierd = {
           command = lib.getExe pkgs.prettierd;
