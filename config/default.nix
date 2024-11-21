@@ -1,9 +1,9 @@
-{ pkgs, ... }:
 {
   # Append all your configuration modules here
   imports = [
     ./opts.nix
     ./keymaps.nix
+    ./noice.nix
     ./lsp.nix
     ./git.nix
     ./fzf-lua.nix
@@ -12,7 +12,6 @@
     ./ufo.nix
     ./conform.nix
     ./yazi.nix
-    ./toggleterm.nix
     ./todo-comment.nix
     ./competitest.nix
   ];
