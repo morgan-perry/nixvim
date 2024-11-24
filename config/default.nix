@@ -3,7 +3,7 @@
   imports = [
     ./opts.nix
     ./keymaps.nix
-    ./noice.nix
+    # ./noice.nix
     ./lsp.nix
     ./git.nix
     ./fzf-lua.nix
@@ -16,15 +16,13 @@
     ./competitest.nix
   ];
   plugins = {
+    transparent.enable = true;
     flash.enable = true;
-    nix.enable = true;
     undotree.enable = true;
     friendly-snippets.enable = true;
     which-key.enable = true;
     trouble.enable = true;
-    zig = {
-      enable = true;
-      settings.fmt_autosave = 0; # Does this work with nvim-conform? nope
-    };
+    nix.enable = true;
+    zig.enable = true;
   };
 }
