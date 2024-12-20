@@ -85,7 +85,7 @@
         };
         trigger = {
           signature_help = {
-            enabled = true;
+            enabled = false;
           };
         };
         sources = {
