@@ -126,6 +126,7 @@
             };
         };
         zls.enable = true;
+        gopls.enable = true;
         pyright.enable = true;
         clangd.enable = true;
         html.enable = true;

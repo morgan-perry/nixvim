@@ -144,6 +144,9 @@
         "nix fmt" = {
           command = lib.getExe pkgs.nixfmt-rfc-style;
         };
+        "go fmt" = {
+          command = lib.getExe pkgs.go;
+        };
         prettierd = {
           command = lib.getExe pkgs.prettierd;
         };
