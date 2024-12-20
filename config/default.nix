@@ -3,7 +3,7 @@
   imports = [
     ./opts.nix
     ./keymaps.nix
-    # ./noice.nix
+    ./noice.nix
     ./lsp.nix
     ./git.nix
     ./fzf-lua.nix

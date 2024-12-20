@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  colorschemes.vscode.enable = true;
+  colorschemes.rose-pine.enable = true;
   globals.mapleader = " ";
 
   clipboard = {
