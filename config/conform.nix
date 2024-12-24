@@ -95,6 +95,7 @@
         cmake = [ "cmake-format" ];
         cpp = [ "clang_format" ];
         css = [ "stylelint" ];
+        go = [ "go fmt" ];
         javascript = {
           __unkeyed-1 = "prettierd";
           __unkeyed-2 = "prettier";
@@ -112,6 +113,7 @@
           "shellharden"
           "shfmt"
         ];
+        templ = [ "templ" ];
         toml = [ "taplo" ];
         typescript = {
           __unkeyed-1 = "prettierd";
@@ -146,6 +148,15 @@
         };
         "go fmt" = {
           command = lib.getExe pkgs.go;
+        };
+        "templ fmt" = {
+          command = lib.getExe pkgs.templ;
+        };
+        taplo = {
+          command = lib.getExe pkgs.taplo;
+        };
+        ruff = {
+          command = lib.getExe pkgs.ruff;
         };
         prettierd = {
           command = lib.getExe pkgs.prettierd;
