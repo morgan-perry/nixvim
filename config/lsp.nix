@@ -127,11 +127,16 @@
         };
         zls.enable = true;
         gopls.enable = true;
+        templ.enable = true;
         pyright.enable = true;
         clangd.enable = true;
         html.enable = true;
         ts_ls.enable = true;
         tailwindcss.enable = true;
+        tailwindcss.filetypes = [
+          "templ"
+          "html"
+        ];
         racket_langserver.enable = true;
         racket_langserver.package = null;
       };
