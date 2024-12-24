@@ -16,7 +16,6 @@
     ./competitest.nix
   ];
   plugins = {
-    transparent.enable = true;
     flash.enable = true;
     undotree.enable = true;
     friendly-snippets.enable = true;
