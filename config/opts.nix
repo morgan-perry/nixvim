@@ -18,7 +18,8 @@
   performance.combinePlugins = {
     enable = true;
     standalonePlugins = [
-      "nvim-treesitter"
+      # NOTE: Must be here otherwise snippets do not show up when blink.cmp is enable
+      "friendly-snippets"
     ];
   };
   performance.byteCompileLua = {

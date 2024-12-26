@@ -89,15 +89,11 @@
           };
         };
         sources = {
-          completion = {
-            enabled_providers = [
-              "lsp"
-              "path"
-              "snippets"
-              # enable to have text completion
-              # "buffer"
-            ];
-          };
+          default = [
+            "lsp"
+            "path"
+            "luasnip"
+          ];
         };
       };
     };

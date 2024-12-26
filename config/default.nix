@@ -23,5 +23,6 @@
     trouble.enable = true;
     nix.enable = true;
     zig.enable = true;
+    luasnip.enable = true;
   };
 }
