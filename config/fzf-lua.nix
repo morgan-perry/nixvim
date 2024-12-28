@@ -1,6 +1,7 @@
 {
   plugins.fzf-lua = {
     enable = true;
+    profile = "telescope";
     keymaps = {
       "<leader>/" = "live_grep";
       "<C-s>" = "grep_curbuf";
