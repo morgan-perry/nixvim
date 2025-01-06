@@ -5,6 +5,7 @@
     ./keymaps.nix
     ./noice.nix
     ./lsp.nix
+    ./blink.nix
     ./git.nix
     ./fzf-lua.nix
     ./mini.nix
