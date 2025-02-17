@@ -2,16 +2,18 @@
   plugins.blink-cmp = {
     enable = true;
     settings = {
-      accept = {
-        auto_brackets = {
-          enabled = false;
+      completion = {
+        accept = {
+          auto_brackets = {
+            enabled = false;
+            semantic_token_resolution = {
+              enabled = false;
+            };
+          };
         };
-      };
-      windows.documentation = {
-        auto_show = false;
-      };
-      highlight = {
-        use_nvim_cmp_as_default = true;
+        documentation = {
+          auto_show = false;
+        };
       };
       keymap = {
         "<C-e>" = [ "hide" ];
@@ -39,26 +41,19 @@
           "fallback"
         ];
       };
-      trigger = {
-        signature_help = {
-          enabled = false;
-        };
+      signature = {
+        enabled = true;
       };
       sources = {
-        completion = {
-          enabled_providers = [
-            "lsp"
-            "path"
-            "snippets"
-            # enable to have text completion
-            # "buffer"
-          ];
+        cmdline = [ ];
+        providers = {
+          buffer = {
+            score_offset = -7;
+          };
+          lsp = {
+            fallbacks = [ ];
+          };
         };
-        default = [
-          "lsp"
-          "path"
-          "luasnip"
-        ];
       };
     };
   };
