@@ -67,6 +67,8 @@
             };
         };
         zls.enable = true;
+        hls.enable = true;
+        hls.installGhc = false; # TODO: may need this later
         gopls.enable = true;
         templ.enable = true;
         pyright.enable = true;

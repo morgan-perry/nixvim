@@ -179,6 +179,9 @@
         yamlfmt = {
           command = lib.getExe pkgs.yamlfmt;
         };
+        ormolu = {
+          command = lib.getExe pkgs.ormolu;
+        };
         # FIXME: broken nixpkgs
         zigfmt = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
           command = lib.getExe pkgs.zig;
