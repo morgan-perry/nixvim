@@ -69,6 +69,7 @@
         zls.enable = true;
         hls.enable = true;
         hls.installGhc = false; # TODO: may need this later
+        dafny.enable = true;
         gopls.enable = true;
         templ.enable = true;
         pyright.enable = true;
