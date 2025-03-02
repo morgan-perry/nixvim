@@ -1,7 +1,7 @@
 { config, ... }:
 {
   plugins.noice = {
-    enable = true;
+    enable = false;
 
     settings = {
       # Hides the title above noice boxes

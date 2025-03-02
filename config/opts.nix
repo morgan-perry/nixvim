@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
-  colorschemes.vscode.enable = true;
+  colorschemes.modus.enable = true;
+  colorschemes.modus.settings.style = "modus_vivendi";
   globals.mapleader = " ";
 
   clipboard = {

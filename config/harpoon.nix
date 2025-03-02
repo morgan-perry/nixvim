@@ -1,6 +1,6 @@
 {
   plugins.harpoon = {
-    enable = true;
+    enable = false;
     keymapsSilent = true;
     keymaps = {
       addFile = "<leader>a";

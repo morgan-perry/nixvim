@@ -67,8 +67,15 @@
             };
         };
         zls.enable = true;
-        hls.enable = true;
-        hls.installGhc = false; # TODO: may need this later
+        hls = {
+          enable = true;
+          installGhc = true; # TODO: may need this later
+          filetypes = [
+            "cabal"
+            "haskell"
+            "lhaskell"
+          ];
+        };
         dafny.enable = true;
         gopls.enable = true;
         templ.enable = true;
