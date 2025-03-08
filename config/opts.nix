@@ -2,6 +2,7 @@
 {
   colorschemes.modus.enable = true;
   colorschemes.modus.settings.style = "modus_vivendi";
+  colorschemes.modus.settings.variant = "tinted";
   globals.mapleader = " ";
 
   clipboard = {
