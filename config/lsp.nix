@@ -11,6 +11,7 @@
     lspsaga = {
       enable = true;
       lightbulb.enable = false;
+      symbolInWinbar.enable = false;
     };
 
     treesitter = {
