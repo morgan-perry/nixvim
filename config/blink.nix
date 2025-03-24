@@ -1,6 +1,6 @@
 {
   plugins.blink-cmp = {
-    enable = false;
+    enable = true;
     settings = {
       completion = {
         accept = {
@@ -45,11 +45,14 @@
         enabled = true;
       };
       sources = {
+        # Disables blink in commandline
         cmdline = [ ];
+        default = [
+          "lsp"
+          "path"
+          "snippets"
+        ];
         providers = {
-          buffer = {
-            score_offset = -7;
-          };
           lsp = {
             fallbacks = [ ];
           };

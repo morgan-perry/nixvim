@@ -3,6 +3,7 @@
   imports = [
     ./opts.nix
     ./keymaps.nix
+    # ./blink.nix
     ./lsp.nix
     ./git.nix
     ./fzf-lua.nix
@@ -12,6 +13,7 @@
     ./yazi.nix
     ./todo-comment.nix
     ./competitest.nix
+    ./orgroam.nix
   ];
 
   plugins = {
@@ -21,6 +23,9 @@
     trouble.enable = true;
     nix.enable = true;
     zig.enable = true;
-    haskell-scope-highlighting.enable = true;
+    orgmode.enable = true;
+    copilot-chat = {
+      enable = true;
+    };
   };
 }
