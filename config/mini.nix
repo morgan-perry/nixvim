@@ -7,7 +7,7 @@
   plugins = {
     mini = {
       enable = true;
-      mockDevIcons = true; # Fixes web-devicons.enable warning
+      mockDevIcons = true; # NOTE: Fixes web-devicons.enable warning
       modules = {
         pairs = { };
         surround = { };
