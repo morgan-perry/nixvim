@@ -77,6 +77,7 @@
             "lhaskell"
           ];
         };
+        ols.enable = true;
         dafny.enable = true;
         gopls.enable = true;
         templ.enable = true;
