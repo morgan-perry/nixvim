@@ -13,7 +13,7 @@
     ./yazi.nix
     ./todo-comment.nix
     ./competitest.nix
-    ./orgroam.nix
+    # ./orgroam.nix
   ];
 
   plugins = {
