@@ -30,6 +30,7 @@
     plugins = true;
     nvimRuntime = true;
     initLua = true;
+    luaLib = true;
   };
 
   opts = {

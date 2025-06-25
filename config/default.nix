@@ -23,7 +23,7 @@
     trouble.enable = true;
     nix.enable = true;
     zig.enable = true;
-    orgmode.enable = true;
+    # orgmode.enable = true;
     copilot-chat = {
       enable = true;
     };
